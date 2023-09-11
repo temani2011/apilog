@@ -1,0 +1,21 @@
+api_log_prodcuts:
+    resource: "./routes/products.yml"
+    prefix: /api-log/products
+
+api_log_prodcuts_ignored:
+    resource: "./routes/products_ignored.yml"
+    prefix: /api-log/products-ignored
+
+api_log_prodcuts_price:
+    resource: "./routes/products_price.yml"
+    prefix: /api-log/products-price
+
+api_log_prodcuts_disabled:
+    resource: "./routes/products_disabled.yml"
+    prefix: /api-log/products-disabled
+
+api_log_prodcuts_packages:
+    resource: "./routes/products_packages.yml"
+    prefix: /api-log/products-packages
+
+

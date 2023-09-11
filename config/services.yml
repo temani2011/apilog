@@ -1,0 +1,14 @@
+imports:
+    - { resource: './services/products.yml' }
+    - { resource: './services/products_ignored.yml' }
+    - { resource: './services/products_price.yml' }
+    - { resource: './services/products_disabled.yml' }
+    - { resource: './services/products_packages.yml' }
+
+
+
+
+
+
+
+

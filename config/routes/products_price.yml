@@ -1,0 +1,16 @@
+
+admin_api_log_products_price_list:
+    path: /
+    methods: [GET]
+    defaults:
+        _controller: 'EO\ApiLog\Controller\Admin\ApiLogProductsPriceController::indexAction'
+        _legacy_controller: AdminApiLogProductsPrice
+        _legacy_link: AdminApiLogProductsPrice
+
+admin_api_log_products_price_search:
+    path: /
+    methods: [POST]
+    defaults:
+        _controller: 'EO\ApiLog\Controller\Admin\ApiLogProductsPriceController::searchAction'
+        _legacy_controller: AdminApiLogProductsPrice
+        _legacy_link: AdminApiLogProductsPrice:search

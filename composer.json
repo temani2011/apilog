@@ -1,0 +1,19 @@
+{
+    "name": "eo/eo_api_log",
+    "description": "Логирование API поставщиков",
+    "license": "AFL-3.0",
+    "optimize-autoloader": true,
+    "require": {
+        "php": ">=5.6.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "EO\\ApiLog\\": "src/"
+        },
+        "classmap": [
+            "eo_api_log.php"
+        ],
+        "exclude-from-classmap": []
+    },
+    "type": "prestashop-module"
+}

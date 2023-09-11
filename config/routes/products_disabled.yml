@@ -1,0 +1,34 @@
+
+admin_api_log_products_disabled_list:
+    path: /
+    methods: [GET]
+    defaults:
+        _controller: 'EO\ApiLog\Controller\Admin\ApiLogProductsDisabledController::indexAction'
+        _legacy_controller: AdminApiLogProductsDisabled
+        _legacy_link: AdminApiLogProductsDisabled
+
+admin_api_log_products_disabled_search:
+    path: /
+    methods: [POST]
+    defaults:
+        _controller: 'EO\ApiLog\Controller\Admin\ApiLogProductsDisabledController::searchAction'
+        _legacy_controller: AdminApiLogProductsDisabled
+        _legacy_link: AdminApiLogProductsDisabled:search
+
+admin_api_log_products_disabled_return:
+    path: /return/{id}
+    methods: [POST]
+    defaults:
+        _controller: 'EO\ApiLog\Controller\Admin\ApiLogProductsDisabledController::returnAction'
+        _legacy_controller: AdminApiLogProductsDisabled
+        _legacy_link: AdminApiLogProductsDisabled:return
+    requirements:
+        id: \d+
+
+admin_api_log_products_disabled_bulk_return:
+    path: /bulk-return
+    methods: POST
+    defaults:
+        _controller: 'EO\ApiLog\Controller\Admin\ApiLogProductsDisabledController::bulkReturnAction'
+        _legacy_controller: AdminApiLogProductsDisabled
+        _legacy_link: 'AdminApiLogProductsDisabled:bulkReturn'

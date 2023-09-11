@@ -1,0 +1,16 @@
+
+admin_api_log_products_packages_list:
+    path: /
+    methods: [GET]
+    defaults:
+        _controller: 'EO\ApiLog\Controller\Admin\ApiLogProductsPackagesController::indexAction'
+        _legacy_controller: AdminApiLogProductsPackages
+        _legacy_link: AdminApiLogProductsPackages
+
+admin_api_log_products_packages_search:
+    path: /
+    methods: [POST]
+    defaults:
+        _controller: 'EO\ApiLog\Controller\Admin\ApiLogProductsPackagesController::searchAction'
+        _legacy_controller: AdminApiLogProductsPackages
+        _legacy_link: AdminApiLogProductsPackages:search

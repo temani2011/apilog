@@ -1,0 +1,59 @@
+admin_api_log_products_list:
+    path: /
+    methods: [GET]
+    defaults:
+        _controller: 'EO\ApiLog\Controller\Admin\ApiLogProductsController::indexAction'
+        _legacy_controller: AdminApiLogProducts
+        _legacy_link: AdminApiLogProducts
+
+admin_api_log_products_search:
+    path: /
+    methods: [POST]
+    defaults:
+        _controller: 'EO\ApiLog\Controller\Admin\ApiLogProductsController::searchAction'
+        _legacy_controller: AdminApiLogProducts
+        _legacy_link: AdminApiLogProducts:search
+
+admin_api_log_products_create:
+    path: /create/{id}
+    methods: [POST]
+    defaults:
+        _controller: 'EO\ApiLog\Controller\Admin\ApiLogProductsController::createAction'
+        _legacy_controller: AdminApiLogProducts
+        _legacy_link: AdminApiLogProducts:create
+    requirements:
+        id: \d+
+
+admin_api_log_products_ignore:
+    path: /ignore/{id}
+    methods: [POST]
+    defaults:
+        _controller: 'EO\ApiLog\Controller\Admin\ApiLogProductsController::ignoreAction'
+        _legacy_controller: AdminApiLogProducts
+        _legacy_link: AdminApiLogProducts:ignore
+    requirements:
+        id: \d+
+
+admin_api_log_products_export_features:
+    path: /export-features/{id}
+    methods: POST
+    defaults:
+        _controller: 'EO\ApiLog\Controller\Admin\ApiLogProductsController::exportFeaturesAction'
+        _legacy_controller: AdminApiLogProducts
+        _legacy_link: 'AdminApiLogProducts:exportFeatures'
+
+admin_api_log_products_bulk_create:
+    path: /bulk-create
+    methods: POST
+    defaults:
+        _controller: 'EO\ApiLog\Controller\Admin\ApiLogProductsController::bulkCreateAction'
+        _legacy_controller: AdminApiLogProducts
+        _legacy_link: 'AdminApiLogProducts:bulkCreate'
+
+admin_api_log_products_bulk_export_features:
+    path: /bulk-export-features
+    methods: POST
+    defaults:
+        _controller: 'EO\ApiLog\Controller\Admin\ApiLogProductsController::bulkExportFeaturesAction'
+        _legacy_controller: AdminApiLogProducts
+        _legacy_link: 'AdminApiLogProducts:bulkExportFeatures'

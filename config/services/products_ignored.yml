@@ -1,0 +1,40 @@
+services:
+    api_log.grid.definition.factory.products_ignored:
+        class: 'EO\ApiLog\Grid\Definition\Factory\ApiLogProductsIgnoredGridDefinitionFactory'
+        parent: 'prestashop.core.grid.definition.factory.abstract_grid_definition'
+
+    api_log.grid.query_builder.products_ignored:
+        class: 'EO\ApiLog\Grid\Query\ApiLogProductsIgnoredQueryBuilder'
+        parent: 'prestashop.core.grid.abstract_query_builder'
+        public: true
+        arguments:
+            - '@prestashop.core.query.doctrine_search_criteria_applicator'
+            - "@=service('prestashop.adapter.legacy.context').getContext().language.id"
+            - "@=service('prestashop.adapter.legacy.context').getContext().shop.id"
+            - "@=service('prestashop.adapter.legacy.context').getContext().shop.id_shop_group"
+            - '@prestashop.adapter.legacy.configuration'
+
+    api_log.grid.data_provider.products_ignored:
+        class: '%prestashop.core.grid.data.factory.doctrine_grid_data_factory%'
+        arguments:
+            - '@api_log.grid.query_builder.products_ignored'
+            - '@prestashop.core.hook.dispatcher'
+            - '@prestashop.core.grid.query.doctrine_query_parser'
+            - 'api_log'
+
+    api_log.grid.data.factory.products_ignored:
+        class: 'PrestaShop\PrestaShop\Core\Grid\Data\Factory\DoctrineGridDataFactory'
+        arguments:
+            - '@api_log.grid.query_builder.products_ignored'
+            - '@prestashop.core.hook.dispatcher'
+            - '@prestashop.core.grid.query.doctrine_query_parser'
+            - 'api_log'
+
+    api_log.grid.factory.products_ignored:
+        class: 'PrestaShop\PrestaShop\Core\Grid\GridFactory'
+        public: true
+        arguments:
+            - '@api_log.grid.definition.factory.products_ignored'
+            - '@api_log.grid.data_provider.products_ignored'
+            - '@prestashop.core.grid.filter.form_factory'
+            - '@prestashop.core.hook.dispatcher'

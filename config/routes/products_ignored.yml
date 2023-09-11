@@ -1,0 +1,34 @@
+
+admin_api_log_products_ignored_list:
+    path: /
+    methods: [GET]
+    defaults:
+        _controller: 'EO\ApiLog\Controller\Admin\ApiLogProductsIgnoredController::indexAction'
+        _legacy_controller: AdminApiLogProductsIgnored
+        _legacy_link: AdminApiLogProductsIgnored
+
+admin_api_log_products_ignored_search:
+    path: /
+    methods: [POST]
+    defaults:
+        _controller: 'EO\ApiLog\Controller\Admin\ApiLogProductsIgnoredController::searchAction'
+        _legacy_controller: AdminApiLogProductsIgnored
+        _legacy_link: AdminApiLogProductsIgnored:search
+
+admin_api_log_products_ignored_return:
+    path: /return/{id}
+    methods: [POST]
+    defaults:
+        _controller: 'EO\ApiLog\Controller\Admin\ApiLogProductsIgnoredController::returnAction'
+        _legacy_controller: AdminApiLogProductsIgnored
+        _legacy_link: AdminApiLogProductsIgnored:return
+    requirements:
+        id: \d+
+
+admin_api_log_products_ignored_bulk_return:
+    path: /bulk-return
+    methods: POST
+    defaults:
+        _controller: 'EO\ApiLog\Controller\Admin\ApiLogProductsIgnoredController::bulkReturnAction'
+        _legacy_controller: AdminApiLogProductsIgnored
+        _legacy_link: 'AdminApiLogProductsIgnored:bulkReturn'
